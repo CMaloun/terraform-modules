@@ -24,7 +24,8 @@ resource "azurerm_subnet" "subnet" {
 }
 
 module "web" {
-  source = "../../compute/web"
+  #source = "../../compute/web"
+  source = "github.com:CMaloun/terraform-modules.git//compute/web?ref=v0.0.1"
   resource_group_name = "${var.resource_group_name}"
   location = "${var.location}"
   prefix = "${var.prefix}"
